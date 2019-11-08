@@ -4,7 +4,8 @@
   "description": "Implementação do desafio react da xp",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --mode development",
+    "build": "webpack --mode development"
   },
   "repository": "git+https://github.com/luizantoniojr/xp-challenge.git",
   "author": "luizantoniojr",
@@ -27,6 +28,7 @@
   },
   "dependencies": {
     "react": "^16.11.0",
-    "react-dom": "^16.11.0"
+    "react-dom": "^16.11.0",
+    "react-hot-loader": "^4.12.16"
   }
 }
