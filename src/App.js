@@ -6,7 +6,7 @@ import './style.css';
 
 const App = () => (
     <div className="App">
-        <h1>{process.env.ENV} olá </h1>
+        <h1>{process.env.ENV} oláa</h1>
     </div>
 );
 
