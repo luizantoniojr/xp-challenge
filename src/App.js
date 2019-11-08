@@ -1,9 +1,6 @@
 import { hot } from 'react-hot-loader';
-
 import React from 'react';
-
 import Content from './components/content';
-
 import './App.css';
 
 const App = () => (

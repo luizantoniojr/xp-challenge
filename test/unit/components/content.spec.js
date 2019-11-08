@@ -2,10 +2,10 @@ import Content from '../../../src/components/content';
 import { shallow } from 'enzyme';
 import React from 'react';
 
-test('Deve exibir conteudo filho', () => {
-    var texto = "XP";
+test('Should display child content', () => {
+    var text = "XP";
 
-    const wrapper = shallow(<Content><span>{texto}</span></Content>);
+    const wrapper = shallow(<Content><span>{text}</span></Content>);
 
-    expect(wrapper.find('span').text()).toBe(texto);
+    expect(wrapper.find('span').text()).toBe(text);
 });
