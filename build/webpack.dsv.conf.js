@@ -1,6 +1,5 @@
 const path = require("path");
 const webpack = require("webpack");
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 
@@ -8,8 +7,9 @@ module.exports = merge(common, {
     entry: ['react-hot-loader/patch', './src'],
     mode: 'development',
     output: {
-        path: path.resolve(__dirname, "../dist/"),
-        filename: 'bundle.js'
+        path: path.resolve(__dirname, "dist/"),
+        publicPath: "/dist/",
+        filename: "bundle.js"
     },
     devServer: {
         contentBase: path.join(__dirname, "../public/"),
@@ -18,10 +18,7 @@ module.exports = merge(common, {
         hotOnly: true
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: 'public/index.html'
-        }),
+        new webpack.HotModuleReplacementPlugin(),
         new webpack.DefinePlugin({
             'process.env': require('../config/dsv.env')
         })
