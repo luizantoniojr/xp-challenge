@@ -20,7 +20,27 @@ class AlbumInfo extends Component {
                         </Album>
                     </div>
                     <PlayList>
-                        <MusicTrack></MusicTrack>
+                        <MusicTrack
+                            number="1"
+                            name="Nome faixa"
+                            time="3:29"
+                        ></MusicTrack>
+                        <MusicTrack
+                            number="2"
+                            name="Nome faixa"
+                            time="3:19"
+                        ></MusicTrack>
+                        <MusicTrack
+                            number="3"
+                            name="Nome faixa"
+                            time="1:29"
+                            playing
+                        ></MusicTrack>
+                        <MusicTrack
+                            number="4"
+                            name="Nome faixa"
+                            time="2:39"
+                        ></MusicTrack>
                     </PlayList>
                 </div>
             </div>

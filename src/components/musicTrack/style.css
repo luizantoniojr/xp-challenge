@@ -1,4 +1,33 @@
 .music-track {
     display: flex;
     flex-direction: row;
+    padding: 1vh;
+}
+
+.music-track.playing * { 
+    color: #1DB954 !important;
+}
+
+.music-track.playing {
+    background: rgba(0, 0, 0, 0.50);
+}
+
+.music-track .number {
+    padding-right: 1vw;
+    flex-grow: 1;
+}
+
+.music-track .name {
+    font-size: 14px;
+    color: #FAFAFA;
+    flex-grow: 998;
+}
+
+.music-track .time {
+    flex-grow: 1;
+}
+
+.music-track .number, .music-track .time {
+    font-size: 14px;
+    color: #999999;
 }
