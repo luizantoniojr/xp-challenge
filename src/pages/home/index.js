@@ -1,8 +1,14 @@
-import React from 'react';
-import './styles.css';
+import React, { Component } from 'react';
+import './style.css';
 
-const Home = () => (
-    <h1>Home</h1>
-);
+class Home extends Component {
+    render() {
+        return (
+            <div>
+                <h1>TESTE</h1>
+            </div>
+        );
+    }
+}
 
 export default Home;
