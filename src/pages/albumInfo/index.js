@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-
-
 import Album from '../../components/album';
 import ActionLinkBack from '../../components/actionLinkBack';
+import PlayList from '../../components/playList';
+import MusicTrack from '../../components/musicTrack';
 
 import './style.css';
 
@@ -19,8 +19,9 @@ class AlbumInfo extends Component {
                             srcImage="">
                         </Album>
                     </div>
-                    <div className="play-list">
-                    </div>
+                    <PlayList>
+                        <MusicTrack></MusicTrack>
+                    </PlayList>
                 </div>
             </div>
         );

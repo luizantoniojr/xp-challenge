@@ -10,8 +10,3 @@
 .album-info .album-info-body .album-container {
     flex-grow: 1;
 }
-
-.album-info .album-info-body .play-list{
-    flex-grow: 999;
-    background: red;
-}

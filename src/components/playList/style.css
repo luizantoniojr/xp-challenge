@@ -1,0 +1,6 @@
+.play-list {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 999;
+    margin-left: 3vw ;
+}
