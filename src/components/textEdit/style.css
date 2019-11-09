@@ -8,6 +8,8 @@
     height: 3rem;
     font-size: 48px;
     font-weight: bold;
+    padding-left: 0.4rem;
+
 }
 
 .textEdit input:focus {
@@ -16,7 +18,8 @@
 }
 
 .textEdit label {
-     font-size: 24px;
-     color: #FAFAFA;
+     font-size: 18px;
+     color: #ffffff;
+     margin-left: 0.5rem;
 }
 
