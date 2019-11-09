@@ -1,6 +1,5 @@
 .content {
-    padding: 2rem;
-    margin-left: 5rem ;
+    padding: 3vmin;
     display: inline-block;
     flex-grow: 8;
 }

@@ -1,13 +1,14 @@
 .grid {
     display: flex;
     flex-direction: column;
-    margin-top: 2rem;
-    padding: 0.5rem;
+    margin-top: 1vh;
 }
 
 .grid h4 {
     font-size: 24px;
     color: #FAFAFA;
+    padding: 0vmin 3vmin 2vmin 3vmin;
+    margin-bottom: 0;
 }
 
 .grid .grid-container{

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import TextEdit from '../../components/textEdit';
 import Grid from '../../components/grid';
+import Album from '../../components/album';
 
 import './style.css';
 
@@ -15,7 +16,41 @@ class Home extends Component {
                     placeholder="Comece a escrever...">
                 </TextEdit>
                 <Grid title="Álbuns buscados recentemente">
-
+                    <Album
+                        name="Nome album grande de duas linhas"
+                        artist="Nome artista grande de duas linhas"
+                        srcImage="">
+                    </Album>
+                    <Album
+                        name="Nome album grande de duas linhas"
+                        artist="Nome artista grande de duas linhas"
+                        srcImage="">
+                    </Album>
+                    <Album
+                        name="Nome album grande de duas linhas"
+                        artist="Nome artista grande de duas linhas"
+                        srcImage="">
+                    </Album>
+                    <Album
+                        name="Nome album grande de duas linhas"
+                        artist="Nome artista grande de duas linhas"
+                        srcImage="">
+                    </Album>
+                    <Album
+                        name="Nome album grande de duas linhas"
+                        artist="Nome artista grande de duas linhas"
+                        srcImage="">
+                    </Album>
+                    <Album
+                        name="Nome album grande de duas linhas"
+                        artist="Nome artista grande de duas linhas"
+                        srcImage="">
+                    </Album>
+                    <Album
+                        name="Nome album grande de duas linhas"
+                        artist="Nome artista grande de duas linhas"
+                        srcImage="">
+                    </Album>
                 </Grid>
             </div>
         );

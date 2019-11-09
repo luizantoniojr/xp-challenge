@@ -1,3 +1,8 @@
+.textEdit {
+    padding: 2vmin;
+}
+
+
 .textEdit input {
     background-color: transparent;
     border-style: none;
@@ -8,7 +13,7 @@
     height: 3rem;
     font-size: 48px;
     font-weight: bold;
-    padding-left: 0.4rem;
+    padding-left: 0.8vmin;
 
 }
 
@@ -18,8 +23,7 @@
 }
 
 .textEdit label {
-     font-size: 18px;
-     color: #ffffff;
-     margin-left: 0.5rem;
+    font-size: 18px;
+    color: #ffffff;
+    padding-left: 1vmin;
 }
-
