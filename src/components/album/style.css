@@ -3,12 +3,6 @@
     flex-direction: column;
     max-width: 25vmin;
     width: 100%;
-    padding: 2vmin;
-}
-
-.album:hover {
-   background: rgba(0, 0, 0, 0.50);
-   cursor: pointer;
 }
 
 .album .image {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import TextEdit from '../../components/textEdit';
 import Grid from '../../components/grid';
@@ -16,41 +17,48 @@ class Home extends Component {
                     placeholder="Comece a escrever...">
                 </TextEdit>
                 <Grid title="Álbuns buscados recentemente">
-                    <Album
-                        name="Nome album grande de duas linhas"
-                        artist="Nome artista grande de duas linhas"
-                        srcImage="">
-                    </Album>
-                    <Album
-                        name="Nome album grande de duas linhas"
-                        artist="Nome artista grande de duas linhas"
-                        srcImage="">
-                    </Album>
-                    <Album
-                        name="Nome album grande de duas linhas"
-                        artist="Nome artista grande de duas linhas"
-                        srcImage="">
-                    </Album>
-                    <Album
-                        name="Nome album grande de duas linhas"
-                        artist="Nome artista grande de duas linhas"
-                        srcImage="">
-                    </Album>
-                    <Album
-                        name="Nome album grande de duas linhas"
-                        artist="Nome artista grande de duas linhas"
-                        srcImage="">
-                    </Album>
-                    <Album
-                        name="Nome album grande de duas linhas"
-                        artist="Nome artista grande de duas linhas"
-                        srcImage="">
-                    </Album>
-                    <Album
-                        name="Nome album grande de duas linhas"
-                        artist="Nome artista grande de duas linhas"
-                        srcImage="">
-                    </Album>
+                    <Link className="link" to={`/AlbumInfo/1`}>
+                        <Album
+                            name="Nome album grande de duas linhas"
+                            artist="Nome artista grande de duas linhas"
+                            srcImage="">
+                        </Album>
+                    </Link>
+                    <Link className="link" to={`/AlbumInfo/1`}>
+                        <Album
+                            name="Nome album grande de duas linhas"
+                            artist="Nome artista grande de duas linhas"
+                            srcImage="">
+                        </Album>
+                    </Link>
+                    <Link className="link" to={`/AlbumInfo/1`}>
+                        <Album
+                            name="Nome album grande de duas linhas"
+                            artist="Nome artista grande de duas linhas"
+                            srcImage="">
+                        </Album>
+                    </Link>
+                    <Link className="link" to={`/AlbumInfo/1`}>
+                        <Album
+                            name="Nome album grande de duas linhas"
+                            artist="Nome artista grande de duas linhas"
+                            srcImage="">
+                        </Album>
+                    </Link>
+                    <Link className="link" to={`/AlbumInfo/1`}>
+                        <Album
+                            name="Nome album grande de duas linhas"
+                            artist="Nome artista grande de duas linhas"
+                            srcImage="">
+                        </Album>
+                    </Link>
+                    <Link className="link" to={`/AlbumInfo/1`}>
+                        <Album
+                            name="Nome album grande de duas linhas"
+                            artist="Nome artista grande de duas linhas"
+                            srcImage="">
+                        </Album>
+                    </Link>
                 </Grid>
             </div>
         );

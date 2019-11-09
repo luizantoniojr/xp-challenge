@@ -1,0 +1,19 @@
+.action-link {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5vmin;
+    color: #FAFAFA;
+    width: fit-content;
+}
+
+.action-link .action-link-clickable-area {
+    cursor: pointer;
+}
+
+.action-link .action-link-clickable-area:hover {
+    opacity: 0.7;
+}
+
+.action-link span {
+    margin-left: 10px;
+} 

@@ -11,7 +11,11 @@
     margin-bottom: 0;
 }
 
-.grid .grid-container{
+.grid .grid-container {
     display: flex;
     flex-wrap: wrap;
+}
+
+.grid .grid-container > * {
+    padding: 2vmin;
 }

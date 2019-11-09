@@ -1,9 +1,9 @@
-.textEdit {
+.text-edit {
     padding: 2vmin;
 }
 
 
-.textEdit input {
+.text-edit input {
     background-color: transparent;
     border-style: none;
     color: #FAFAFA;
@@ -17,12 +17,12 @@
 
 }
 
-.textEdit input:focus {
+.text-edit input:focus {
     outline: none;
     border-color: #1DB954;
 }
 
-.textEdit label {
+.text-edit label {
     font-size: 18px;
     color: #ffffff;
     padding-left: 1vmin;

@@ -1,0 +1,17 @@
+.album-info {
+    display: flex;
+    flex-direction: column;
+}
+.album-info-body {
+    display: flex;
+    flex-direction: row;
+}
+
+.album-info .album-info-body .album-container {
+    flex-grow: 1;
+}
+
+.album-info .album-info-body .play-list{
+    flex-grow: 999;
+    background: red;
+}

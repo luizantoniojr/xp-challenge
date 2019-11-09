@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
-html, body, #root{
+html, body, #root {
     height: 100%;
     background: #161616;
 }
@@ -11,4 +10,8 @@ html, body, #root{
     flex-direction: row;
     font-family:  'Roboto', sans-serif;
     height: 100%;
+}
+
+a {
+    text-decoration: none;
 }
