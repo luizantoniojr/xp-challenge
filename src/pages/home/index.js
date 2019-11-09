@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom'
 
 import TextEdit from '../../components/textEdit';
 import Grid from '../../components/grid';
@@ -8,7 +9,12 @@ import Album from '../../components/album';
 import './style.css';
 
 class Home extends Component {
+
     render() {
+        const hasToken = true;
+        if (!hasToken)
+            return <Redirect to='/addToken' />
+
         return (
             <div className="Home">
                 <TextEdit
