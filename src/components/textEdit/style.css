@@ -1,0 +1,23 @@
+.textEdit input {
+    background-color: transparent;
+    border-style: none;
+    color: #FAFAFA;
+    border-bottom-style: solid;
+    border-color: #999999;
+    width: 100%;
+    height: 3rem;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.textEdit input:focus {
+    outline: none;
+    border-color: #1DB954;
+    transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1);
+}
+
+.textEdit label {
+     font-size: 24px;
+     color: #FAFAFA;
+}
+

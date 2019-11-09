@@ -1,8 +1,9 @@
 .sideBar {
     display: flex;
     justify-content: center;
-    padding-top: 1rem;
+    padding-top: 0.5rem;
     width: 5rem;
     height: 100%;
     position: fixed;
+    flex-grow: 1;
 }
