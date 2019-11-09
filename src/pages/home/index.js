@@ -8,7 +8,10 @@ class Home extends Component {
     render() {
         return (
             <div className="Home">
-                <TextEdit></TextEdit>
+                <TextEdit
+                    label="Busque por artistas, álbuns ou músicas"
+                    placeholder="Comece a escrever...">
+                </TextEdit>
             </div>
         );
     }
