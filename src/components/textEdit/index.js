@@ -3,8 +3,8 @@ import './style.css';
 
 const TextEdit = (props) => (
     <div className="textEdit">
-        <label>{props.label}</label>
-        <input type="text" placeholder={props.placeholder}></input>
+        <label for={props.id}>{props.label}</label>
+        <input id={props.id} type="text" placeholder={props.placeholder}></input>
     </div>
 );
 

@@ -9,6 +9,7 @@ class Home extends Component {
         return (
             <div className="Home">
                 <TextEdit
+                    id="search"
                     label="Busque por artistas, álbuns ou músicas"
                     placeholder="Comece a escrever...">
                 </TextEdit>
