@@ -10,7 +10,7 @@ import * as SpotifyAction from '../../store/actions/spotify';
 
 import './style.css';
 
-class AddToken extends Component {
+class Token extends Component {
 
     constructor(props) {
         super(props);
@@ -62,4 +62,4 @@ class AddToken extends Component {
 
 const mapStateToProps = state => ({ state: state.spotify.token });
 const mapDispatchToProps = dispatch => bindActionCreators(SpotifyAction, dispatch);
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(AddToken));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Token));

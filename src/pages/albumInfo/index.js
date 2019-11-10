@@ -58,7 +58,7 @@ class AlbumInfo extends Component {
     render() {
         const { albumInfo } = this.props.state;
         if (!albumInfo)
-            return <div>Carregando</div>
+            return null;
 
         return (
             <div className="album-info">
