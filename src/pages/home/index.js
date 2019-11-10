@@ -53,7 +53,7 @@ class Home extends Component {
             <div className="Home">
                 <TextEdit
                     id="search"
-                    label="Busque por artistas, álbuns ou músicas"
+                    label="Busque por álbuns ou músicas"
                     placeholder="Comece a escrever..."
                     value={searchTerm}
                     onChange={this.handleSearchChange}>
