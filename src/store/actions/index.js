@@ -1,0 +1,3 @@
+export const PLAY = "PLAY";
+export const SEARCH_ALBUMS = "SEARCH_ALBUMS";
+export const SEARCH_ALBUMS_FULFILLED = "SEARCH_ALBUMS_FULFILLED";
