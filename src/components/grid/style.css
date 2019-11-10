@@ -7,18 +7,14 @@
 .grid h4 {
     font-size: 24px;
     color: #FAFAFA;
-    padding: 0vmin 3vmin 2vmin 3vmin;
-    margin-bottom: 0;
+    padding: 1vmin;
+    margin-bottom: 2vh;
 }
 
 .grid .grid-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    /* justify-content: space-between; */
-    /* justify-content: space-around; */
-
-
+    justify-content: space-evenly;
 }
 
 .grid .grid-container > * {
