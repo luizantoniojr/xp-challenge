@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 
 import TextEdit from '../../components/textEdit';
 import ActionLink from '../../components/actionLink';
+
 import * as SpotifyAction from '../../store/actions/spotify';
 
 import './style.css';

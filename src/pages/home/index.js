@@ -36,12 +36,11 @@ class Home extends Component {
     }
 
     render() {
-        const { token, searchedTerm, searchResult, searchHistory } = this.props.state;
+        const { token, searchedTerm, searchResult, albumSelectionHistory } = this.props.state;
         const { searchTerm } = this.state;
 
         if (!token)
             return <Redirect to='/addToken' />
-
 
         var gridTitle = searchResult.items.length ? `Resultados encontrados para "${searchedTerm}"` : "Álbuns buscados recentemente";
 
