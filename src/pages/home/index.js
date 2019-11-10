@@ -36,7 +36,14 @@ class Home extends Component {
     }
 
     render() {
-        const { token, searchedTerm, searchResultAlbums, searchResultTracks, albumSelectionHistory } = this.props.state;
+        const {
+            token,
+            searchedTerm,
+            searchResultAlbums,
+            searchResultTracks,
+            albumSelectionHistory
+        } = this.props.state;
+
         const { searchTerm } = this.state;
 
         if (!token)

@@ -15,11 +15,13 @@ test('Should display track name', () => {
     expect(wrapper.find('.name').text()).toBe(name);
 });
 
-test('Should display track time', () => {
-    const time = "3:20";
+test('Should display track time formatted', () => {
+    const time = "146250";
+    const formattedTime = "2:26";
+
     const wrapper = shallow(<MusicTrack time={time}></MusicTrack>);
 
-    expect(wrapper.find('.time').text()).toBe(time);
+    expect(wrapper.find('.time').text()).toBe(formattedTime);
 });
 
 test('Should set className playing', () => {
