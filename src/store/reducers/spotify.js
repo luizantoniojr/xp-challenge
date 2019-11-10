@@ -1,5 +1,4 @@
 import {
-    PLAY,
     SEARCH_ALBUMS_FULFILLED,
     SEARCH_ALBUMS_REJECTED,
     SET_TOKEN,
@@ -26,16 +25,6 @@ export default function spotify(state = INITIAL_STATE, action) {
                 searchResult,
                 searchedTerm
             };
-        case SEARCH_ALBUMS_REJECTED:
-            return {
-                ...state,
-                token: ""
-            };
-        case SET_TOKEN:
-            return {
-                ...state,
-                token: action.payload.token
-            };
         case GET_ALBUM_INFO_FULFILLED:
             var albumInfo = action.payload.albumInfo;
             var albumSelectionHistory = state.albumSelectionHistory.filter((item) => {
@@ -49,6 +38,16 @@ export default function spotify(state = INITIAL_STATE, action) {
                 ...state,
                 albumSelectionHistory,
                 albumInfo
+            };
+        case SET_TOKEN:
+            return {
+                ...state,
+                token: action.payload.token
+            };
+        case SEARCH_ALBUMS_REJECTED || GET_ALBUM_INFO_REJECTED:
+            return {
+                ...state,
+                token: ""
             };
         default:
             return state;

@@ -1,4 +1,4 @@
-import { PLAY, SEARCH_ALBUMS, SET_TOKEN, GET_ALBUM_INFO } from '../actions';
+import { SEARCH_ALBUMS, SET_TOKEN, GET_ALBUM_INFO } from '../actions';
 
 import spotify from '../../services/spotifyService';
 

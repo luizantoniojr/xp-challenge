@@ -16,7 +16,8 @@ class AlbumInfo extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            trackPlaying: null
+            trackPlaying: null,
+            audio: null
         };
         this.getAlbum = this.getAlbum.bind(this);
         this.play = this.play.bind(this);
@@ -27,6 +28,10 @@ class AlbumInfo extends Component {
         this.getAlbum();
     }
 
+    componentWillUnmount() {
+        this.pause();
+    }
+
     getAlbum() {
         const { id } = this.props.match.params;
         const { token } = this.props.state;
@@ -35,7 +40,15 @@ class AlbumInfo extends Component {
     }
 
     play(track) {
-        this.setState({ trackPlaying: track.id });
+        this.pause();
+        var audio = new Audio(track.preview_url);
+        audio.play();
+        this.setState({ trackPlaying: track.id, audio: audio });
+    }
+
+    pause() {
+        if (this.state.audio)
+            this.state.audio.pause();
     }
 
     checkIfTrackIsPlaying(track) {
