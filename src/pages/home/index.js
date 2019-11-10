@@ -28,7 +28,7 @@ class Home extends Component {
 
     handleFinishTyping() {
         if (this.state.searchTerm)
-            this.props.searchAlbums(this.state.searchTerm);
+            this.props.searchAlbums(this.state.searchTerm, this.props.state.token);
     }
 
     componentWillUnmount() {
@@ -36,11 +36,12 @@ class Home extends Component {
     }
 
     render() {
-        const hasToken = true;
-        if (!hasToken)
-            return <Redirect to='/addToken' />
-        const { searchResult, searchedTerm, searchHistory } = this.props.state;
+        const { token, searchedTerm, searchResult, searchHistory } = this.props.state;
         const { searchTerm } = this.state;
+
+        if (!token)
+            return <Redirect to='/addToken' />
+
 
         var gridTitle = searchResult.items.length ? `Resultados encontrados para "${searchedTerm}"` : "Álbuns buscados recentemente";
 
