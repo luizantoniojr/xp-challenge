@@ -1,7 +1,10 @@
+import storage from 'redux-persist/lib/storage';
+import { persistReducer } from 'redux-persist';
+
 import {
+    SET_TOKEN,
     SEARCH_ALBUMS_FULFILLED,
     SEARCH_ALBUMS_REJECTED,
-    SET_TOKEN,
     GET_ALBUM_INFO_FULFILLED,
     GET_ALBUM_INFO_REJECTED
 }
@@ -16,7 +19,7 @@ const INITIAL_STATE = {
     albumInfo: null
 };
 
-export default function spotify(state = INITIAL_STATE, action) {
+function spotify(state = INITIAL_STATE, action) {
     switch (action.type) {
         case SEARCH_ALBUMS_FULFILLED:
             const { result, searchedTerm } = action.payload;
@@ -55,4 +58,13 @@ export default function spotify(state = INITIAL_STATE, action) {
             return state;
 
     }
-} 
+}
+
+const persistConfig = {
+    key: 'spotify',
+    storage: storage,
+    whitelist: ['token', 'albumSelectionHistory']
+};
+
+
+export default persistReducer(persistConfig, spotify);
