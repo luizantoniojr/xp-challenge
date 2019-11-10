@@ -2,16 +2,16 @@ import {
     SEARCH_ALBUMS_FULFILLED,
     SEARCH_ALBUMS_REJECTED,
     SET_TOKEN,
-    GET_ALBUM_INFO_FULFILLED
+    GET_ALBUM_INFO_FULFILLED,
+    GET_ALBUM_INFO_REJECTED
 }
     from "../actions";
 
 const INITIAL_STATE = {
     token: '',
     searchedTerm: '',
-    searchResult: {
-        items: []
-    },
+    searchResultAlbums: [],
+    searchResultTracks: [],
     albumSelectionHistory: [],
     albumInfo: null
 };
@@ -19,10 +19,11 @@ const INITIAL_STATE = {
 export default function spotify(state = INITIAL_STATE, action) {
     switch (action.type) {
         case SEARCH_ALBUMS_FULFILLED:
-            const { searchResult, searchedTerm } = action.payload;
+            const { result, searchedTerm } = action.payload;
             return {
                 ...state,
-                searchResult,
+                searchResultAlbums: result.albums.items,
+                searchResultTracks: result.tracks.items,
                 searchedTerm
             };
         case GET_ALBUM_INFO_FULFILLED:
@@ -44,7 +45,8 @@ export default function spotify(state = INITIAL_STATE, action) {
                 ...state,
                 token: action.payload.token
             };
-        case SEARCH_ALBUMS_REJECTED || GET_ALBUM_INFO_REJECTED:
+        case GET_ALBUM_INFO_REJECTED:
+        case SEARCH_ALBUMS_REJECTED:
             return {
                 ...state,
                 token: ""

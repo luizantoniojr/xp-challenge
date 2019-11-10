@@ -9,7 +9,7 @@ export function searchAlbums(searchedTerm, token) {
             spotify.searchAlbums(searchedTerm, token, (error, data) => {
                 if (error)
                     reject(error);
-                resolve({ searchedTerm, searchResult: data.albums });
+                resolve({ searchedTerm, result: data });
             });
         })
     }

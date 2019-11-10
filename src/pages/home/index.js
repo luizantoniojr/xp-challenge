@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 
 import TextEdit from '../../components/textEdit';
 import Grid from '../../components/grid';
-import Album from '../../components/album';
+import Card from '../../components/card';
 
 import * as SpotifyAction from '../../store/actions/spotify';
 
@@ -36,13 +36,11 @@ class Home extends Component {
     }
 
     render() {
-        const { token, searchedTerm, searchResult, albumSelectionHistory } = this.props.state;
+        const { token, searchedTerm, searchResultAlbums, searchResultTracks, albumSelectionHistory } = this.props.state;
         const { searchTerm } = this.state;
 
         if (!token)
             return <Redirect to='/addToken' />
-
-        var gridTitle = searchResult.items.length ? `Resultados encontrados para "${searchedTerm}"` : "Álbuns buscados recentemente";
 
         return (
             <div className="Home">
@@ -53,19 +51,57 @@ class Home extends Component {
                     value={searchTerm}
                     onChange={this.handleSearchChange}>
                 </TextEdit>
-                <Grid title={gridTitle}>
-                    {
-                        searchResult.items.map(item => (
-                            <Link key={item.id} className="link" to={`/AlbumInfo/${item.id}`}>
-                                <Album
-                                    name={item.name}
-                                    artist={item.artists[0].name}
-                                    srcImage={item.images[0].url}>
-                                </Album>
-                            </Link>
-                        ))
-                    }
-                </Grid>
+                {
+                    (!!searchResultAlbums.length &&
+                        <Grid title={`Álbuns encontrados para "${searchedTerm}"`}>
+                            {
+                                searchResultAlbums.map(item => (
+                                    <Link key={item.id} className="link" to={`/AlbumInfo/${item.id}`}>
+                                        <Card
+                                            title={item.name}
+                                            subtitle={item.artists[0].name}
+                                            srcImage={item.images[0].url}>
+                                        </Card>
+                                    </Link>
+                                ))
+                            }
+                        </Grid>
+                    )
+                }
+                {
+                    (!!searchResultTracks.length &&
+                        <Grid title={`Músicas encontradas para "${searchedTerm}"`}>
+                            {
+                                searchResultTracks.map(item => (
+                                    <Link key={item.id} className="link" to={`/AlbumInfo/${item.album.id}`}>
+                                        <Card
+                                            title={item.name}
+                                            subtitle={item.artists[0].name}
+                                            srcImage={item.album.images[0].url}>
+                                        </Card>
+                                    </Link>
+                                ))
+                            }
+                        </Grid>
+                    )
+                }
+                {
+                    (!!albumSelectionHistory.length &&
+                        <Grid title="Álbuns buscados recentemente">
+                            {
+                                albumSelectionHistory.map(item => (
+                                    <Link key={item.id} className="link" to={`/AlbumInfo/${item.id}`}>
+                                        <Card
+                                            title={item.name}
+                                            subtitle={item.artists[0].name}
+                                            srcImage={item.images[0].url}>
+                                        </Card>
+                                    </Link>
+                                ))
+                            }
+                        </Grid>
+                    )
+                }
             </div>
         );
     }

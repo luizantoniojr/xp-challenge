@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import Album from '../../components/album';
+import Card from '../../components/card';
 import ActionLinkBack from '../../components/actionLinkBack';
 import PlayList from '../../components/playList';
 import MusicTrack from '../../components/musicTrack';
@@ -65,11 +65,11 @@ class AlbumInfo extends Component {
                 <ActionLinkBack></ActionLinkBack>
                 <div className="album-info-body">
                     <div className="album-container">
-                        <Album
-                            name={albumInfo.name}
-                            artist={albumInfo.artists[0].name}
+                        <Card
+                            title={albumInfo.name}
+                            subtitle={albumInfo.artists[0].name}
                             srcImage={albumInfo.images[0].url}>
-                        </Album>
+                        </Card>
                     </div>
                     <PlayList>
                         {
