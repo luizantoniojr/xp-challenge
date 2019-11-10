@@ -14,12 +14,12 @@
     font-size: 48px;
     font-weight: bold;
     padding-left: 0.8vmin;
-
+    outline: none;
 }
 
 .text-edit input:focus {
-    outline: none;
     border-color: #1DB954;
+    transition: all 0.3s ease;
 }
 
 .text-edit label {

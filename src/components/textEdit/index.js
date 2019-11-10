@@ -25,6 +25,8 @@ class TextEdit extends React.Component {
                     placeholder={this.props.placeholder}
                     value={this.state.value}
                     onChange={this.handleChange}
+                    autoComplete="off"
+                    required
                 ></input>
             </div>
         )
