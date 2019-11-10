@@ -10,7 +10,7 @@ import * as SpotifyAction from '../../store/actions/spotify';
 
 import './style.css';
 
-class AlbumInfo extends Component {
+class Album extends Component {
 
     constructor(props) {
         super(props);
@@ -53,4 +53,4 @@ class AlbumInfo extends Component {
 
 const mapStateToProps = state => ({ state: state.spotify });
 const mapDispatchToProps = dispatch => bindActionCreators(SpotifyAction, dispatch);
-export default connect(mapStateToProps, mapDispatchToProps)(AlbumInfo);
+export default connect(mapStateToProps, mapDispatchToProps)(Album);

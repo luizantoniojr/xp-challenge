@@ -3,7 +3,7 @@ import './style.css';
 
 import Icon from '../icon';
 
-const SideBar = (props) => (
+const SideBar = () => (
     <aside className="side-bar">
         <Icon name="spotify" size="3"></Icon>
     </aside>

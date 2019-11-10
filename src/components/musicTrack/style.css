@@ -1,7 +1,7 @@
 .music-track {
     display: flex;
     flex-direction: row;
-    padding: 1vh;
+    padding: 2vh;
 }
 
 .music-track.playing * { 

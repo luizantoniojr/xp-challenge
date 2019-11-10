@@ -22,6 +22,7 @@ class Home extends Component {
     }
 
     handleSearchChange(searchTerm) {
+        clearInterval(this.state.timer);
         var timer = setTimeout(this.handleFinishTyping, 2000);
         this.setState({ searchTerm, timer });
     }
@@ -32,6 +33,7 @@ class Home extends Component {
     }
 
     componentWillUnmount() {
+        clearInterval(this.state.timer);
         this.setState({ timer: null });
     }
 
@@ -63,7 +65,7 @@ class Home extends Component {
                         <Grid title={`Álbuns encontrados para "${searchedTerm}"`}>
                             {
                                 searchResultAlbums.map(item => (
-                                    <Link key={item.id} className="link" to={`/AlbumInfo/${item.id}`}>
+                                    <Link key={item.id} className="link" to={`/Album/${item.id}`}>
                                         <Card
                                             title={item.name}
                                             subtitle={item.artists[0].name}
@@ -80,7 +82,7 @@ class Home extends Component {
                         <Grid title={`Músicas encontradas para "${searchedTerm}"`}>
                             {
                                 searchResultTracks.map(item => (
-                                    <Link key={item.id} className="link" to={`/AlbumInfo/${item.album.id}`}>
+                                    <Link key={item.id} className="link" to={`/Album/${item.album.id}`}>
                                         <Card
                                             title={item.name}
                                             subtitle={item.artists[0].name}
@@ -97,7 +99,7 @@ class Home extends Component {
                         <Grid title="Álbuns buscados recentemente">
                             {
                                 albumSelectionHistory.map(item => (
-                                    <Link key={item.id} className="link" to={`/AlbumInfo/${item.id}`}>
+                                    <Link key={item.id} className="link" to={`/Album/${item.id}`}>
                                         <Card
                                             title={item.name}
                                             subtitle={item.artists[0].name}

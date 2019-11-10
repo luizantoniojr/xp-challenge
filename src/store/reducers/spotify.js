@@ -11,7 +11,7 @@ import {
     from "../actions";
 
 const INITIAL_STATE = {
-    token: '',
+    token: null,
     searchedTerm: '',
     searchResultAlbums: [],
     searchResultTracks: [],
@@ -52,7 +52,7 @@ function spotify(state = INITIAL_STATE, action) {
         case SEARCH_ALBUMS_REJECTED:
             return {
                 ...state,
-                token: ""
+                token: null
             };
         default:
             return state;
