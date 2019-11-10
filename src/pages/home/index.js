@@ -16,26 +16,32 @@ class Home extends Component {
 
     constructor(props) {
         super(props);
+        this.state = { searchTerm: '', timer: null };
         this.handleFinishTyping = this.handleFinishTyping.bind(this);
+        this.handleSearchChange = this.handleSearchChange.bind(this);
     }
 
-    handleSearchChange(event) {
-        this.setState({ value: event.target.value, timer });
+    handleSearchChange(searchTerm) {
+        var timer = setTimeout(this.handleFinishTyping, 2000);
+        this.setState({ searchTerm, timer });
     }
 
-    handleFinishTyping(value) {
-        if (value)
-            this.props.searchAlbums(value);
+    handleFinishTyping() {
+        this.props.searchAlbums(this.state.searchTerm);
+    }
+
+    componentWillUnmount() {
+        this.setState({ timer: null });
     }
 
     render() {
         const hasToken = true;
         if (!hasToken)
             return <Redirect to='/addToken' />
+        const { searchResult, searchedTerm, searchHistory } = this.props.state;
+        const { searchTerm } = this.state;
 
-        var { searchResult, searchTerm, searchHistory } = this.props.state;
-
-        var gridTitle = searchResult.items.length ? "Resultado" : "Álbuns buscados recentemente";
+        var gridTitle = searchResult.items.length ? `Resultados encontrados para "${searchedTerm}"` : "Álbuns buscados recentemente";
 
         return (
             <div className="Home">
@@ -44,8 +50,7 @@ class Home extends Component {
                     label="Busque por artistas, álbuns ou músicas"
                     placeholder="Comece a escrever..."
                     value={searchTerm}
-                    onChange={this.handleSearchChange}
-                    onFinishTyping={this.handleFinishTyping}>
+                    onChange={this.handleSearchChange}>
                 </TextEdit>
                 <Grid title={gridTitle}>
                     {
@@ -59,7 +64,6 @@ class Home extends Component {
                             </Link>
                         ))
                     }
-
                 </Grid>
             </div>
         );

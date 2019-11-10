@@ -5,24 +5,14 @@ class TextEdit extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { value: props.value, timer: null };
+        this.state = { value: props.value, };
         this.handleChange = this.handleChange.bind(this);
-        this.handleFinishTyping = this.handleFinishTyping.bind(this);
     }
 
     handleChange(event) {
-        this.setState({ value: event.target.value, timer });
-        var timer = setTimeout(this.handleFinishTyping, 2000);
-        if (this.props.handleChange)
-            this.props.onChange();
-    }
-
-    handleFinishTyping() {
-        this.props.onFinishTyping(this.state.value);
-    }
-
-    componentWillUnmount() {
-        this.setState({ timer: null });
+        this.setState({ value: event.target.value });
+        if (this.props.onChange)
+            this.props.onChange(event.target.value);
     }
 
     render() {
