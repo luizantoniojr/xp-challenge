@@ -9,3 +9,14 @@
 .album-info .album-info-body .album-container {
     flex-grow: 1;
 }
+
+ .album-info-loading {
+    display: flex;
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.album-info-loading h1 {
+    color: #999999;
+}

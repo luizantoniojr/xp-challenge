@@ -6,7 +6,8 @@ import {
     SEARCH_ALBUMS_FULFILLED,
     SEARCH_ALBUMS_REJECTED,
     GET_ALBUM_INFO_FULFILLED,
-    GET_ALBUM_INFO_REJECTED
+    GET_ALBUM_INFO_REJECTED,
+    CLEAR_ALBUM_INFO
 }
     from "../actions";
 
@@ -48,11 +49,16 @@ function spotify(state = INITIAL_STATE, action) {
                 ...state,
                 token: action.payload.token
             };
+        case CLEAR_ALBUM_INFO:
+            return {
+                ...state,
+                albumInfo: INITIAL_STATE.albumInfo
+            };
         case GET_ALBUM_INFO_REJECTED:
         case SEARCH_ALBUMS_REJECTED:
             return {
                 ...state,
-                token: null
+                token: INITIAL_STATE.token
             };
         default:
             return state;

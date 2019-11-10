@@ -1,4 +1,9 @@
-import { SEARCH_ALBUMS, SET_TOKEN, GET_ALBUM_INFO } from '../actions';
+import {
+    SEARCH_ALBUMS,
+    SET_TOKEN,
+    GET_ALBUM_INFO,
+    CLEAR_ALBUM_INFO
+} from '../actions';
 
 import spotify from '../../services/spotifyService';
 
@@ -32,5 +37,11 @@ export function setToken(token) {
     return {
         type: SET_TOKEN,
         payload: { token }
+    }
+}
+
+export function clearAlbumInfo() {
+    return {
+        type: CLEAR_ALBUM_INFO
     }
 }

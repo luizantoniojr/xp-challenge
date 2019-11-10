@@ -18,21 +18,27 @@ class Album extends Component {
     }
 
     componentDidMount() {
-        this.getAlbum();
+        const { id } = this.props.match.params;
+        if (this.props.state.id != id) {
+            this.props.clearAlbumInfo();
+            this.getAlbum(id);
+        }
     }
 
-    getAlbum() {
-        const { id } = this.props.match.params;
+    getAlbum(id) {
         const { token } = this.props.state;
-
         this.props.getAlbumInfo(id, token);
     }
 
     render() {
         const { albumInfo } = this.props.state;
-        if (!albumInfo)
-            return null;
 
+        if (!albumInfo)
+            return (
+                <div className="album-info-loading">
+                    <h1>Carregando o álbum...</h1>
+                </div>
+            );
         return (
             <div className="album-info">
                 <ActionLinkBack></ActionLinkBack>
