@@ -27,7 +27,8 @@ class Home extends Component {
     }
 
     handleFinishTyping() {
-        this.props.searchAlbums(this.state.searchTerm);
+        if (this.state.searchTerm)
+            this.props.searchAlbums(this.state.searchTerm);
     }
 
     componentWillUnmount() {
