@@ -47,7 +47,7 @@ class Home extends Component {
         const { searchTerm } = this.state;
 
         if (!token)
-            return <Redirect to='/addToken' />
+            return <Redirect to='/token' />
 
         return (
             <div className="Home">

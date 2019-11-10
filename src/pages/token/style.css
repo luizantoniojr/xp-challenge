@@ -1,4 +1,4 @@
-.add-token{
+.token{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -6,7 +6,7 @@
     height: 80vh;
 }
 
-.add-token .action-area{
+.token .action-area{
     display: flex;
     flex-direction: column;
     justify-content: center;

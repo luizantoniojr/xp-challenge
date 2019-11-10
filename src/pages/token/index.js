@@ -17,25 +17,21 @@ class Token extends Component {
         this.state = {
             token: ''
         }
-        this.handleClick = this.handleClick.bind(this);
         this.handleChange = this.handleChange.bind(this);
-    }
-
-    handleClick() {
-        if (this.state.token) {
-            this.props.setToken(this.state.token);
-            this.props.history.push('/');
-        }
     }
 
     handleChange(token) {
         this.setState({ token });
+        if (token.length >= 167) {
+            this.props.setToken(token);
+            this.props.history.push('/');
+        }
     }
 
     render() {
-        return (
-            <div className="add-token">
 
+        return (
+            <div className="token">
                 <TextEdit
                     id="token"
                     label="Não encontramos o seu token de acesso"
@@ -44,17 +40,12 @@ class Token extends Component {
                     onChange={this.handleChange}>
                 </TextEdit>
                 <div className="action-area">
-                    <ActionLink onClick={this.handleClick}>
-                        Avançar
-                    </ActionLink>
                     <ActionLink
-                        iconName="user-secret"
                         href="https://developer.spotify.com/documentation/web-playback-sdk/quick-start/#"
                         target="_blank">
                         Pegue o seu token aqui
-                    </ActionLink>
+                </ActionLink>
                 </div>
-
             </div>
         );
     }
